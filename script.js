@@ -20,16 +20,16 @@ document.addEventListener("DOMContentLoaded",function(){
            const lats= position.coords.latitude;
            const longs=position.coords.longitude;
            let key;
-            const data=await fetch('./Data.json');
-            jsonData= await data.json();
-            const openCage_Key=jsonData.OPENCAGE_KEY;
-           const url_reverseGeoCoding=`https://api.opencagedata.com/geocode/v1/json?q=${lats}+${longs}&key=${openCage_Key}`;
+            // const data=await fetch('./Data.json');
+            // jsonData= await data.json();
+            // const openCage_Key=jsonData.OPENCAGE_KEY;
+           const url_reverseGeoCoding=`https://api.opencagedata.com/geocode/v1/json?q=${lats}+${longs}&key=04b8bf38ae3a4aada794a14caff67747`;
             
            fetch(url_reverseGeoCoding).then(response=>response.json()).then(function(data){
 
             console.log(data);
             
-           weathercall(`http://api.weatherapi.com/v1/current.json?key=${jsonData.WEATHER_API}&q=${data.results[0].components.county}&aqi=no`);
+           weathercall(`http://api.weatherapi.com/v1/current.json?key=d4b0ba4e6e04459d84e160426241507&q=${data.results[0].components.county}&aqi=no`);
 
            })
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded",function(){
  weather_button.addEventListener("click",function(){
 
     if(input_box.value!=""){
-        weathercall(`http://api.weatherapi.com/v1/current.json?key=${jsonData.WEATHER_API}&q=${input_box.value}&aqi=no`);
+        weathercall(`http://api.weatherapi.com/v1/current.json?key=d4b0ba4e6e04459d84e160426241507&q=${input_box.value}&aqi=no`);
     }
     input_box.value="";
  })
