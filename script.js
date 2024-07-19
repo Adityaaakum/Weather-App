@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded",function(){
 
             console.log(data);
             
-           weathercall(`http://api.weatherapi.com/v1/current.json?key=d4b0ba4e6e04459d84e160426241507&q=${data.results[0].components.county}&aqi=no`);
+           weathercall(`https://api.weatherapi.com/v1/current.json?key=d4b0ba4e6e04459d84e160426241507&q=${data.results[0].components.county}&aqi=no`);
 
            })
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded",function(){
  weather_button.addEventListener("click",function(){
 
     if(input_box.value!=""){
-        weathercall(`http://api.weatherapi.com/v1/current.json?key=d4b0ba4e6e04459d84e160426241507&q=${input_box.value}&aqi=no`);
+        weathercall(`https://api.weatherapi.com/v1/current.json?key=d4b0ba4e6e04459d84e160426241507&q=${input_box.value}&aqi=no`);
     }
     input_box.value="";
  })
