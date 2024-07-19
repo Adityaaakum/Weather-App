@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded",function(){
            const lats= position.coords.latitude;
            const longs=position.coords.longitude;
            let key;
-            const data=await fetch('/Data.json');
+            const data=await fetch('./Data.json');
             jsonData= await data.json();
             const openCage_Key=jsonData.OPENCAGE_KEY;
            const url_reverseGeoCoding=`https://api.opencagedata.com/geocode/v1/json?q=${lats}+${longs}&key=${openCage_Key}`;
